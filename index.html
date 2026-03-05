@@ -1,74 +1,259 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chilecito Aventura</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat+Alternates:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora Chilecito • Sierras • Vinos • Aventura</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-  <header>
-    <div class="container">
-      <div class="logo">
-        <span class="emoji">🏔️</span>
-        <h1>Chilecito Aventura</h1>
-      </div>
-      <nav>
-        <a href="#servicios">Servicios</a>
-        <a href="#contacto">Contacto</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section id="servicios" class="servicios">
-      <div class="container">
-        <h2>Nuestros Servicios</h2>
-
-        <div class="grid">
-          <article class="card anim" data-image="https://fotos.perfil.com/2021/11/04/trim/1280/720/1103larioja-1264507.jpg">
-            <div class="card-icon"><i class="fa-solid fa-car-side"></i></div>
-            <h3>Excursiones 4×4</h3>
-            <p>Cuesta de Miranda, Mina La Mejicana, Valle Famatina, caminos de altura y miradores exclusivos.</p>
-            <a href="#" class="btn">Consultar</a>
-          </article>
-
-          <article class="card anim" data-image="https://i.blogs.es/7722b3/gastro_rioja/840_560.jpg">
-            <div class="card-icon"><i class="fa-solid fa-utensils"></i></div>
-            <h3>Experiencias Gastronómicas</h3>
-            <p>Almuerzos en fincas, picadas riojanas, asados a la llama, maridajes y cenas temáticas.</p>
-            <a href="#" class="btn">Consultar</a>
-          </article>
-
-          <article class="card anim" data-image="https://deviajevoy.com.ar/wp-content/uploads/2020/05/famatina.jpg">
-            <div class="card-icon"><i class="fa-solid fa-person-hiking"></i></div>
-            <h3>Caminatas & Trekking</h3>
-            <p>Rutas guiadas de baja, media y alta dificultad. Portezuelo, Tambería Inca, senderos en Famatina.</p>
-            <a href="#" class="btn">Consultar</a>
-          </article>
+    <!-- NAVEGACIÓN -->
+    <nav class="navbar">
+        <div class="logo">
+            <h2>Explora Chilecito</h2>
         </div>
-      </div>
+        
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        
+        <ul class="menu" id="menu">
+            <li class="dropdown">
+                <a href="#conoce">Conoce</a>
+                <ul class="dropdown-content">
+                    <li><a href="pages/conoce-historia-cultura.html" target="_blank">Historia & Cultura</a></li>
+                    <li><a href="pages/conoce-museos.html" target="_blank">Museos</a></li>
+                    <li><a href="pages/conoce-pueblo.html" target="_blank">El Pueblo</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#descubri">Descubrí</a>
+                <ul class="dropdown-content">
+                    <li><a href="pages/descubri-naturaleza.html" target="_blank">Naturaleza & Sierras</a></li>
+                    <li><a href="pages/descubri-excursiones.html" target="_blank">Excursiones</a></li>
+                    <li><a href="pages/descubri-senderismo.html" target="_blank">Senderismo</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#disfruta">Disfruta</a>
+                <ul class="dropdown-content">
+                    <li><a href="pages/disfruta-gastronomia.html" target="_blank">Gastronomía Riojana</a></li>
+                    <li><a href="pages/disfruta-ruta-vino.html" target="_blank">Ruta del Vino</a></li>
+                    <li><a href="pages/disfruta-maridajes.html" target="_blank">Maridajes únicos</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#servicios">Servicios</a>
+                <ul class="dropdown-content">
+                    <li><a href="#tours">Tours Privados</a></li>
+                    <li><a href="#paquetes">Paquetes</a></li>
+                    <li><a href="#contacto">Reservas</a></li>
+                </ul>
+            </li>
+        </ul>
+        
+        <a href="#contacto" class="btn-reserva">Reservá tu experiencia</a>
+    </nav>
+
+    <!-- HERO SLIDER -->
+    <section class="hero">
+        <div class="slider">
+            <div class="slide active" style="background-image: url('images/hero-chilecito.jpeg')">
+                <div class="overlay">
+                    <h1>Chilecito te espera</h1>
+                    <p>Sierras, vinos de altura y experiencias auténticas</p>
+                    <a href="#descubri" class="btn">Descubrí ahora</a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('images/cable-mejicana.jpg')">
+                <div class="overlay">
+                    <h1>El Cable Carril La Mejicana</h1>
+                    <p>Una obra de ingeniería que sigue impresionando</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('images/viñedos-famatina.jpg')">
+                <div class="overlay">
+                    <h1>Viñedos en el Valle de Famatina</h1>
+                    <p>Torrontés y Malbec de altura</p>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section id="contacto" class="contacto">
-      <div class="container">
-        <h2>¿Listo para tu aventura?</h2>
-        <p>Escribinos por WhatsApp y armamos tu experiencia a medida.</p>
-        <a href="https://wa.me/5493825XXXXXX?text=Hola%21%20Quiero%20consultar%20por..." class="btn-large">
-          <i class="fa-brands fa-whatsapp"></i> Escribir por WhatsApp
-        </a>
-      </div>
+    <!-- PRESTADORES DE SERVICIO (Nueva sección arriba de Conoce) -->
+    <section id="prestadores" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Prestadores de Servicio</h2>
+            <div class="cards-grid">
+                <div class="card prestador-card" onclick="openModal('empresa1')">
+                    <img src="images/logo-suyana-trekking.jpg" alt="Logo Suyana Trekking">
+                    <h3>Suyana Trekking</h3>
+                    <p>Excursiones esenciales por las sierras.</p>
+                </div>
+                <div class="card prestador-card" onclick="openModal('empresa2')">
+                    <img src="images/logo-tours-famatina.jpg" alt="Logo Tours Famatina">
+                    <h3>Chilecito Trekking</h3>
+                    <p>Excursiones guiadas por el valle de Famatina y sierras.</p>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer>
-    <div class="container">
-      <p>Chilecito Aventura © 2026</p>
+    <!-- MODALES PARA EMPRESAS -->
+    <div id="empresa1" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('empresa1')">&times;</span>
+            <h2>Suyana Trekking</h2>
+            <p>Contacta con nosotros:</p>
+            <a href="https://wa.me/5493825123456" class="btn-social whatsapp">WhatsApp</a>
+            <a href="https://www.instagram.com/suyana_trekking?igsh=c2cyb3Z4Nm04b3JnZQ==" class="btn-social instagram">Instagram</a>
+        </div>
     </div>
-  </footer>
+
+    <div id="empresa2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('empresa2')">&times;</span>
+            <h2>Tours Famatina</h2>
+            <p>Contacta con nosotros:</p>
+            <a href="https://wa.me/5493825654321" class="btn-social whatsapp">WhatsApp</a>
+            <a href="https://www.instagram.com/chilecitotrekking?igsh=cTIyb2JzaXZua3BmZQ==" class="btn-social instagram">Instagram</a>
+        </div>
+    </div>
+
+    <!-- CONOCE -->
+    <section id="conoce" class="section">
+        <div class="container">
+            <h2 class="section-title">Conoce Chilecito</h2>
+            <p class="intro">
+                Un oasis rodeado de sierras donde la historia minera se mezcla con viñedos 
+                y una hospitalidad que se siente en cada rincón. Experiencias reales, lejos de lo masivo.
+            </p>
+        </div>
+    </section>
+
+    <!-- DESCUBRÍ -->
+    <section id="descubri" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Descubrí la naturaleza</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="images/cable-mejicana.jpg" alt="Cable Carril La Mejicana">
+                    <h3>Cable Carril La Mejicana</h3>
+                    <p>Visita guiada a la histórica estación y museo privado.</p>
+                </div>
+                <div class="card">
+                    <img src="images/sierra-famatina.jpg" alt="Sierra de Famatina">
+                    <h3>Sierra de Famatina</h3>
+                    <p>Trekking y miradores con vistas 360°.</p>
+                </div>
+                <div class="card">
+                    <img src="images/cristo-portezuelo.jpg" alt="Cristo del Portezuelo">
+                    <h3>Cristo del Portezuelo</h3>
+                    <p>El guardián de la ciudad con la mejor vista.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DISFRUTA -->
+    <section id="disfruta" class="section">
+        <div class="container">
+            <h2 class="section-title">Disfruta gastronomía y vinos</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <img src="images/barriles-vino.jpg" alt="Barriles en bodega">
+                    <h3>Bodegas del Valle</h3>
+                    <p>Degustación privada entre barriles de roble y viñedos de altura.</p>
+                </div>
+                <div class="card">
+                    <img src="images/empanadas-riojanas.jpg" alt="Empanadas riojanas">
+                    <h3>Gastronomía Riojana</h3>
+                    <p>Empanadas caseras, locro y cabrito al asador.</p>
+                </div>
+                <div class="card">
+                    <img src="images/maridaje-vinos.jpg" alt="Maridaje de vinos y comida">
+                    <h3>Maridajes únicos</h3>
+                    <p>Experiencias con chefs locales y vinos de altura.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Nuestros servicios</h2>
+            <div class="cards-grid">
+                <div class="card">
+                    <h3>Tours Privados</h3>
+                    <p>Con guías locales apasionados (máx. 8 personas).</p>
+                </div>
+                <div class="card">
+                    <h3>Paquetes 2-3 días</h3>
+                    <p>Vino + naturaleza + estadía en casas boutique.</p>
+                </div>
+                <div class="card">
+                    <h3>Traslados y logística</h3>
+                    <p>Desde La Rioja capital o Catamarca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAPA -->
+    <section id="ubicacion" class="section">
+        <div class="container">
+            <h2 class="section-title">¿Dónde estamos?</h2>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3265.123456789!2d-67.495!3d-29.16!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x96b5c5c5c5c5c5c5%3A0x1234567890abcdef!2sChilecito%2C%20La%20Rioja%2C%20Argentina!5e0!3m2!1ses!2sar!4v1700000000000" 
+                        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contacto">
+        <div class="container">
+            <p>© 2026 Explora Chilecito • Experiencias 100 % privadas</p>
+            <p>WhatsApp: <strong>+54 9 3825 123456</strong> • hola@explorachilecito.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Slider automático
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 5000);
+
+        // Menú hamburguesa en móvil
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+
+        // Funciones para modales
+        function openModal(id) {
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        // Cerrar modal al click fuera
+        window.onclick = function(event) {
+            const modals = document.getElementsByClassName('modal');
+            for (let i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>
