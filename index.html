@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <!-- NAVEGACIÓN -->
+    <!-- NAVEGACIÓN (sin botón de reserva) -->
     <nav class="navbar">
         <div class="logo">
             <h2>Explora Chilecito</h2>
@@ -42,17 +42,7 @@
                     <li><a href="pages/disfruta-maridajes.html" target="_blank">Maridajes únicos</a></li>
                 </ul>
             </li>
-            <li class="dropdown">
-                <a href="#servicios">Servicios</a>
-                <ul class="dropdown-content">
-                    <li><a href="#tours">Tours Privados</a></li>
-                    <li><a href="#paquetes">Paquetes</a></li>
-                    <li><a href="#contacto">Reservas</a></li>
-                </ul>
-            </li>
         </ul>
-        
-        <a href="#contacto" class="btn-reserva">Reservá tu experiencia</a>
     </nav>
 
     <!-- HERO SLIDER -->
@@ -80,43 +70,43 @@
         </div>
     </section>
 
-    <!-- PRESTADORES DE SERVICIO (Nueva sección arriba de Conoce) -->
+    <!-- PRESTADORES DE SERVICIO -->
     <section id="prestadores" class="section bg-light">
         <div class="container">
             <h2 class="section-title">Prestadores de Servicio</h2>
             <div class="cards-grid">
-                <div class="card prestador-card" onclick="openModal('empresa1')">
-                    <img src="images/logo-suyana-trekking.jpg" alt="Logo Suyana Trekking">
-                    <h3>Suyana Trekking</h3>
-                    <p>Excursiones esenciales por las sierras.</p>
+                <div class="card prestador-card" onclick="openModal('suyuna')">
+                    <img src="images/logo-suyana-trekking.jpg" alt="Suyuna Trekking">
+                    <h3>Suyuna Trekking</h3>
+                    <p>Excursiones en el Valle de Famatina y sierras.</p>
                 </div>
-                <div class="card prestador-card" onclick="openModal('empresa2')">
-                    <img src="images/logo-tours-famatina.jpg" alt="Logo Tours Famatina">
+                <div class="card prestador-card" onclick="openModal('chilecitotrekking')">
+                    <img src="images/logo-tours-famatina.jpg" alt="Chilecito Trekking">
                     <h3>Chilecito Trekking</h3>
-                    <p>Excursiones guiadas por el valle de Famatina y sierras.</p>
+                    <p>Excursiones guiadas por las sierras y senderos locales.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MODALES PARA EMPRESAS -->
-    <div id="empresa1" class="modal">
+    <!-- MODALES PARA PRESTADORES -->
+    <div id="suyuna" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('empresa1')">&times;</span>
-            <h2>Suyana Trekking</h2>
-            <p>Contacta con nosotros:</p>
-            <a href="https://wa.me/5493825123456" class="btn-social whatsapp">WhatsApp</a>
-            <a href="https://www.instagram.com/suyana_trekking?igsh=c2cyb3Z4Nm04b3JnZQ==" class="btn-social instagram">Instagram</a>
+            <span class="close" onclick="closeModal('suyuna')">×</span>
+            <h2>Suyuna Trekking</h2>
+            <p>Contactanos directamente:</p>
+            <a href="https://wa.me/5493825NUMEROSUYUNA?text=Hola%2C%20quiero%20info%20de%20senderismo" target="_blank" class="btn-social whatsapp">WhatsApp</a>
+            <a href="https://www.instagram.com/suyana_trekking" target="_blank" class="btn-social instagram">Instagram</a>
         </div>
     </div>
 
-    <div id="empresa2" class="modal">
+    <div id="chilecitotrekking" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeModal('empresa2')">&times;</span>
-            <h2>Tours Famatina</h2>
-            <p>Contacta con nosotros:</p>
-            <a href="https://wa.me/5493825654321" class="btn-social whatsapp">WhatsApp</a>
-            <a href="https://www.instagram.com/chilecitotrekking?igsh=cTIyb2JzaXZua3BmZQ==" class="btn-social instagram">Instagram</a>
+            <span class="close" onclick="closeModal('chilecitotrekking')">×</span>
+            <h2>Chilecito Trekking</h2>
+            <p>Contactanos directamente:</p>
+            <a href="https://wa.me/5493825NUMEROCHILECITO?text=Hola%2C%20quiero%20info%20de%20senderismo" target="_blank" class="btn-social whatsapp">WhatsApp</a>
+            <a href="https://www.instagram.com/chilecitotrekking" target="_blank" class="btn-social instagram">Instagram</a>
         </div>
     </div>
 
@@ -179,27 +169,6 @@
         </div>
     </section>
 
-    <!-- SERVICIOS -->
-    <section id="servicios" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Nuestros servicios</h2>
-            <div class="cards-grid">
-                <div class="card">
-                    <h3>Tours Privados</h3>
-                    <p>Con guías locales apasionados (máx. 8 personas).</p>
-                </div>
-                <div class="card">
-                    <h3>Paquetes 2-3 días</h3>
-                    <p>Vino + naturaleza + estadía en casas boutique.</p>
-                </div>
-                <div class="card">
-                    <h3>Traslados y logística</h3>
-                    <p>Desde La Rioja capital o Catamarca.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- MAPA -->
     <section id="ubicacion" class="section">
         <div class="container">
@@ -235,7 +204,7 @@
             menu.classList.toggle('active');
         }
 
-        // Funciones para modales
+        // Modales para prestadores
         function openModal(id) {
             document.getElementById(id).style.display = "block";
         }
@@ -244,7 +213,6 @@
             document.getElementById(id).style.display = "none";
         }
 
-        // Cerrar modal al click fuera
         window.onclick = function(event) {
             const modals = document.getElementsByClassName('modal');
             for (let i = 0; i < modals.length; i++) {
